@@ -1,0 +1,56 @@
+2015-09-01 14:53:56 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Tabla "PRODUCTO" no encontrada
+Table "PRODUCTO" not found; SQL statement:
+INSERT INTO producto (producto,descripcion,precio,clasificacion,existencia,minimo,maximo) VALUES ('Pantalon','Pantalon azul',100,'Ropa',10,1,50); [42102-188]
+2015-09-01 14:54:18 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Tabla "PRODUCTOS" no encontrada
+Table "PRODUCTOS" not found; SQL statement:
+INSERT INTO productos (producto,descripcion,precio,clasificacion,existencia,minimo,maximo) VALUES ('Pantalon','Pantalon azul',100,'Ropa',10,1,50); [42102-188]
+2015-09-01 14:54:50 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Tabla "PRODUCTOS" no encontrada
+Table "PRODUCTOS" not found; SQL statement:
+INSERT INTO productos (producto,descripcion,precio,clasificacion,existencia,minimo,maximo) VALUES ('Pantalon','Pantalon azul',100,'Ropa',10,1,50); [42102-188]
+2015-09-01 14:55:07 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Error de Sintaxis en sentencia SQL "CREATE TABLE PRODUCTOS ( CLAVE INT(4) NOT NULL AUTO_INCREMENT, PRODUCTO VARCHAR(30),DESCRIPCION VARCHAR(30),PRECIO INT(10),CLASIFICACION VARCHAR(30),EXISTENCIA INT(10),MINIMO INT(10),MAXIMO INT(10) [*]"; se esperaba "FOR, UNSIGNED, NOT, NULL, AS, DEFAULT, GENERATED, NOT, NULL, AUTO_INCREMENT, BIGSERIAL, SERIAL, IDENTITY, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, CHECK, REFERENCES, ,, )"
+Syntax error in SQL statement "CREATE TABLE PRODUCTOS ( CLAVE INT(4) NOT NULL AUTO_INCREMENT, PRODUCTO VARCHAR(30),DESCRIPCION VARCHAR(30),PRECIO INT(10),CLASIFICACION VARCHAR(30),EXISTENCIA INT(10),MINIMO INT(10),MAXIMO INT(10) [*]"; expected "FOR, UNSIGNED, NOT, NULL, AS, DEFAULT, GENERATED, NOT, NULL, AUTO_INCREMENT, BIGSERIAL, SERIAL, IDENTITY, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, CHECK, REFERENCES, ,, )"; SQL statement:
+Create Table productos ( clave INT(4) NOT NULL AUTO_INCREMENT, producto varchar(30),descripcion varchar(30),precio INT(10),clasificacion varchar(30),existencia INT(10),minimo INT(10),maximo INT(10) [42001-188]
+2015-09-01 14:57:39 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Tabla "PRODUCTOS" no encontrada
+Table "PRODUCTOS" not found; SQL statement:
+INSERT INTO productos (producto,descripcion,precio,clasificacion,existencia,minimo,maximo) VALUES ('Pantalon','Pantalon azul',100,'Ropa',10,1,50); [42102-188]
+2015-09-01 14:58:16 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Error de Sintaxis en sentencia SQL "CREATE TABLE PRODUCTOS ( CLAVE INT(4) NOT NULL AUTO_INCREMENT, PRODUCTO VARCHAR(30) NOT NULL ,DESCRIPCION VARCHAR(30),PRECIO INT(10) NOT NULL,CLASIFICACION VARCHAR(30) NOT NULL,EXISTENCIA INT(10) NOT NULL,MINIMO INT(10) NOT NULL,MAXIMO INT(10) NOT NULL [*]"; se esperaba "AS, DEFAULT, GENERATED, NOT, NULL, AUTO_INCREMENT, BIGSERIAL, SERIAL, IDENTITY, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, CHECK, REFERENCES, ,, )"
+Syntax error in SQL statement "CREATE TABLE PRODUCTOS ( CLAVE INT(4) NOT NULL AUTO_INCREMENT, PRODUCTO VARCHAR(30) NOT NULL ,DESCRIPCION VARCHAR(30),PRECIO INT(10) NOT NULL,CLASIFICACION VARCHAR(30) NOT NULL,EXISTENCIA INT(10) NOT NULL,MINIMO INT(10) NOT NULL,MAXIMO INT(10) NOT NULL [*]"; expected "AS, DEFAULT, GENERATED, NOT, NULL, AUTO_INCREMENT, BIGSERIAL, SERIAL, IDENTITY, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, CHECK, REFERENCES, ,, )"; SQL statement:
+Create Table productos ( clave INT(4) NOT NULL AUTO_INCREMENT, producto varchar(30) NOT NULL ,descripcion varchar(30),precio INT(10) NOT NULL,clasificacion varchar(30) NOT NULL,existencia INT(10) NOT NULL,minimo INT(10) NOT NULL,maximo INT(10) NOT NULL [42001-188]
+2015-09-01 15:04:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Tabla "ROL" ya existe
+Table "ROL" already exists; SQL statement:
+Create Table rol ( id_rol INT(4) NOT NULL AUTO_INCREMENT, nombre_rol varchar(30)) [42101-188]
+2015-09-01 15:04:52 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Tabla "PRODUCTO" no encontrada
+Table "PRODUCTO" not found; SQL statement:
+Select * from producto; [42102-188]
+2015-09-01 15:05:04 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Conversión de datos fallida, convirtiendo "Pantalon"
+Data conversion error converting "Pantalon" [22018-188]
+2015-09-01 21:23:41 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Columna "EXISTENCIAS" no encontrada
+Column "EXISTENCIAS" not found; SQL statement:
+INSERT INTO productos( producto,descripcion,precio,clasificacion,existencias,minimo,maximo) VALUES ('television','42 pulgadas',5000,'electronica',10,1,15) [42122-188]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.table.Table.getColumn(Table.java:648)
+	at org.h2.command.Parser.parseColumn(Parser.java:855)
+	at org.h2.command.Parser.parseColumnList(Parser.java:839)
+	at org.h2.command.Parser.parseInsert(Parser.java:1039)
+	at org.h2.command.Parser.parsePrepared(Parser.java:400)
+	at org.h2.command.Parser.parse(Parser.java:304)
+	at org.h2.command.Parser.parse(Parser.java:276)
+	at org.h2.command.Parser.prepareCommand(Parser.java:241)
+	at org.h2.engine.Session.prepareLocal(Session.java:461)
+	at org.h2.engine.Session.prepareCommand(Session.java:403)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1188)
+	at org.h2.jdbc.JdbcStatement.executeUpdateInternal(JdbcStatement.java:126)
+	at org.h2.jdbc.JdbcStatement.executeUpdate(JdbcStatement.java:115)
+	at lambdatarea.DataBase.main(DataBase.java:48)
